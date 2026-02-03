@@ -1,0 +1,15 @@
+# Common PHP/Web junk
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# Uploads - usually ignored in production repos, but keeping structure
+# /uploads/thumbnails/*
+# /uploads/videos/*
+# !/uploads/thumbnails/.gitkeep
+# !/uploads/videos/.gitkeep
+
+# IDEs
+.vscode/
+.idea/
