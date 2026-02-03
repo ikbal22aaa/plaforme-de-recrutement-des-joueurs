@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monaco Editor – Démonstration</title>
+    <!-- Styles de base pour l'éditeur -->
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f3f4f6;
+            color: #111827;
+        }
+        header {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #16a34a, #059669);
+            color: #fff;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.75rem;
+        }
+        main {
+            padding: 1.5rem;
+        }
+        #editor-container {
+            height: 70vh;
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(22, 163, 74, 0.15);
+        }
+        .notice {
+            margin-bottom: 1.5rem;
+            padding: 1rem 1.25rem;
+            border-left: 4px solid #16a34a;
+            background: #ecfdf5;
+            border-radius: 8px;
+        }
+        code {
+            background: rgba(15, 23, 42, 0.1);
+            border-radius: 4px;
+            padding: 0.2rem 0.4rem;
+        }
+        footer {
+            padding: 1rem 1.5rem;
+            font-size: 0.875rem;
+            color: #4b5563;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Monaco Editor – Démonstration locale</h1>
+        <p>Vérifiez que votre installation npm fonctionne correctement.</p>
+    </header>
+
+    <main>
+        <div class="notice">
+            <strong>Important :</strong> cette page charge Monaco Editor depuis <code>node_modules/monaco-editor/min/vs</code>. Assurez-vous que vous accédez à cette page via <code>http://localhost/...</code> et que le dossier <code>node_modules</code> est présent au même niveau que ce fichier.
+        </div>
+
+        <div id="editor-container"></div>
+    </main>
+
+    <footer>
+        <p>
+            Besoin d'aide ? Consultez la documentation officielle :
+            <a href="https://microsoft.github.io/monaco-editor/" target="_blank" rel="noopener">Monaco Editor Docs</a>
+        </p>
+    </footer>
+
+    <script src="node_modules/monaco-editor/min/vs/loader.js"></script>
+    <script>
+        // Configuration du chemin vers les modules Monaco
+        require.config({ paths: { 'vs': 'node_modules/monaco-editor/min/vs' } });
+
+        // Chargement de l'éditeur
+        require(['vs/editor/editor.main'], function () {
+            monaco.editor.create(document.getElementById('editor-container'), {
+                value: `<?php\n// Exemple de code PHP\nfunction bienvenue($nom) {\n    return "Bienvenue, " . $nom . "!";\n}\n\necho bienvenue('KoraJob');\n?>`,
+                language: 'php',
+                theme: 'vs-dark',
+                automaticLayout: true,
+                minimap: {
+                    enabled: true
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

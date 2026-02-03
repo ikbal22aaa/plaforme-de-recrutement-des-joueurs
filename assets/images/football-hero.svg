@@ -1,0 +1,64 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="fieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2E7D32;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="ballGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F5F5F5;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="3" dy="3" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#E8F5E8"/>
+  
+  <!-- Football Field -->
+  <rect x="50" y="100" width="700" height="400" rx="20" fill="url(#fieldGrad)" filter="url(#shadow)"/>
+  
+  <!-- Field Lines -->
+  <rect x="70" y="120" width="660" height="360" fill="none" stroke="#FFFFFF" stroke-width="3" rx="10"/>
+  
+  <!-- Center Circle -->
+  <circle cx="400" cy="300" r="80" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+  <circle cx="400" cy="300" r="5" fill="#FFFFFF"/>
+  
+  <!-- Goal Areas -->
+  <rect x="70" y="200" width="100" height="200" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+  <rect x="630" y="200" width="100" height="200" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+  
+  <!-- Penalty Areas -->
+  <rect x="70" y="150" width="160" height="300" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+  <rect x="570" y="150" width="160" height="300" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+  
+  <!-- Players -->
+  <circle cx="200" cy="250" r="15" fill="#FF5722"/>
+  <circle cx="180" cy="270" r="25" fill="#1976D2"/>
+  <circle cx="600" cy="280" r="15" fill="#FF5722"/>
+  <circle cx="620" cy="260" r="25" fill="#1976D2"/>
+  
+  <!-- Football Ball -->
+  <circle cx="400" cy="300" r="25" fill="url(#ballGrad)" stroke="#000" stroke-width="2" filter="url(#shadow)">
+    <animateTransform attributeName="transform" type="translate" 
+                      values="400,300; 380,280; 400,300; 420,320; 400,300" 
+                      dur="3s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Ball Pattern -->
+  <path d="M390 300 L410 300 M400 290 L400 310 M390 290 L410 310 M410 290 L390 310" 
+        stroke="#000" stroke-width="2" opacity="0.3"/>
+  
+  <!-- Goal Nets -->
+  <rect x="60" y="230" width="10" height="140" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.7"/>
+  <rect x="730" y="230" width="10" height="140" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.7"/>
+  
+  <!-- Stadium Background -->
+  <ellipse cx="400" cy="50" rx="400" ry="80" fill="#64B5F6" opacity="0.3"/>
+  
+  <!-- Title Text -->
+  <text x="400" y="550" text-anchor="middle" font-family="Arial, sans-serif" 
+        font-size="32" font-weight="bold" fill="#2E7D32">KoraJob Football</text>
+</svg>

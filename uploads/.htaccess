@@ -1,0 +1,43 @@
+# Sécurité pour le dossier uploads
+# Empêcher l'exécution de scripts PHP
+<Files "*.php">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+# Empêcher l'exécution d'autres scripts
+<Files "*.php3">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+<Files "*.php4">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+<Files "*.php5">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+<Files "*.phtml">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+# Permettre seulement les fichiers vidéo et images
+<FilesMatch "\.(mp4|avi|mov|wmv|flv|webm|mkv|jpg|jpeg|png|gif|svg)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
+
+# Bloquer tout le reste
+<FilesMatch ".*">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+# Désactiver l'affichage du contenu du dossier
+Options -Indexes
+

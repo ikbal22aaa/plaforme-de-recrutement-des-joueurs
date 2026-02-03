@@ -1,0 +1,219 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+
+% Page setup
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Sample LaTeX Document}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Code listing style
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    commentstyle=\color{green},
+    stringstyle=\color{red},
+    numbers=left,
+    numberstyle=\tiny,
+    stepnumber=1,
+    numbersep=5pt,
+    backgroundcolor=\color{gray!10},
+    frame=single,
+    breaklines=true,
+    captionpos=b
+}
+
+\title{\textbf{Sample LaTeX Document}\\
+\large A Comprehensive Example of LaTeX Features}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+
+This document serves as a comprehensive example of various LaTeX features and formatting options. LaTeX is a powerful document preparation system that excels in typesetting mathematical expressions, creating professional documents, and handling complex formatting requirements.
+
+\subsection{Why LaTeX?}
+
+LaTeX offers several advantages:
+\begin{itemize}
+    \item Professional typesetting
+    \item Excellent mathematical notation support
+    \item Cross-referencing capabilities
+    \item Bibliography management
+    \item Consistent formatting
+\end{itemize}
+
+\section{Mathematical Expressions}
+
+\subsection{Inline Mathematics}
+
+Here are some examples of inline mathematical expressions: The quadratic formula is $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$, and Euler's identity states that $e^{i\pi} + 1 = 0$.
+
+\subsection{Display Mathematics}
+
+Here's a more complex mathematical expression:
+
+\begin{align}
+    \int_{-\infty}^{\infty} e^{-x^2} dx &= \sqrt{\pi} \label{eq:gaussian}\\
+    \frac{\partial^2 u}{\partial t^2} &= c^2 \nabla^2 u \label{eq:wave}\\
+    \sum_{n=1}^{\infty} \frac{1}{n^2} &= \frac{\pi^2}{6} \label{eq:basel}
+\end{align}
+
+\subsection{Matrix Notation}
+
+The following is an example of matrix notation:
+
+\[
+A = \begin{pmatrix}
+    a_{11} & a_{12} & a_{13} \\
+    a_{21} & a_{22} & a_{23} \\
+    a_{31} & a_{32} & a_{33}
+\end{pmatrix}
+\]
+
+\section{Tables}
+
+\subsection{Simple Table}
+
+\begin{table}[H]
+\centering
+\caption{Student Grades}
+\begin{tabular}{lccc}
+\toprule
+Student & Math & Physics & Chemistry \\
+\midrule
+Alice & 95 & 87 & 92 \\
+Bob & 78 & 85 & 88 \\
+Carol & 92 & 91 & 89 \\
+David & 85 & 79 & 93 \\
+\bottomrule
+\end{tabular}
+\label{tab:grades}
+\end{table}
+
+\subsection{Advanced Table with Math}
+
+\begin{table}[H]
+\centering
+\caption{Statistical Summary}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Variable} & \textbf{Mean} & \textbf{Standard Deviation} \\
+\midrule
+Height (cm) & $\mu = 170.5$ & $\sigma = 8.3$ \\
+Weight (kg) & $\mu = 68.2$ & $\sigma = 12.1$ \\
+Age (years) & $\mu = 25.7$ & $\sigma = 4.2$ \\
+\bottomrule
+\end{tabular}
+\label{tab:stats}
+\end{table}
+
+\section{Code Listings}
+
+\subsection{Python Code Example}
+
+Here's an example of a Python function:
+
+\begin{lstlisting}[caption=Fibonacci Function, label=lst:fibonacci]
+def fibonacci(n):
+    """
+    Calculate the nth Fibonacci number using recursion.
+    
+    Args:
+        n (int): The position in the Fibonacci sequence
+        
+    Returns:
+        int: The nth Fibonacci number
+    """
+    if n <= 1:
+        return n
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+# Example usage
+for i in range(10):
+    print(f"F({i}) = {fibonacci(i)}")
+\end{lstlisting}
+
+\section{Enumerated Lists}
+
+\subsection{Numbered List}
+
+The steps to solve a quadratic equation are:
+
+\begin{enumerate}
+    \item Identify the coefficients $a$, $b$, and $c$ in the equation $ax^2 + bx + c = 0$
+    \item Calculate the discriminant: $D = b^2 - 4ac$
+    \item Determine the nature of roots:
+    \begin{itemize}
+        \item If $D > 0$: Two distinct real roots
+        \item If $D = 0$: One repeated real root
+        \item If $D < 0$: Two complex conjugate roots
+    \end{itemize}
+    \item Apply the quadratic formula: $x = \frac{-b \pm \sqrt{D}}{2a}$
+\end{enumerate}
+
+\section{Theorems and Proofs}
+
+\begin{theorem}[Pythagorean Theorem]
+In a right-angled triangle, the square of the hypotenuse is equal to the sum of squares of the other two sides.
+\end{theorem}
+
+\begin{proof}
+Let $a$ and $b$ be the lengths of the legs of a right triangle, and $c$ be the length of the hypotenuse. The area of the square with side length $a + b$ is $(a + b)^2$. This area can also be expressed as the sum of four triangles and the square of the hypotenuse: $4 \cdot \frac{1}{2}ab + c^2$.
+
+Therefore:
+\begin{align}
+(a + b)^2 &= 4 \cdot \frac{1}{2}ab + c^2 \\
+a^2 + 2ab + b^2 &= 2ab + c^2 \\
+a^2 + b^2 &= c^2
+\end{align}
+\end{proof}
+
+\section{References and Cross-references}
+
+As we can see from equation \ref{eq:gaussian}, the Gaussian integral has a beautiful closed-form solution. Table \ref{tab:grades} shows the student performance data, and the Python code in listing \ref{lst:fibonacci} demonstrates a recursive implementation.
+
+\section{Hyperlinks and URLs}
+
+You can visit the \href{https://www.latex-project.org/}{official LaTeX website} for more information. For LaTeX documentation, check out \href{https://www.overleaf.com/learn}{Overleaf's learning resources}.
+
+\section{Conclusion}
+
+This document demonstrates various LaTeX features including:
+
+\begin{itemize}
+    \item Mathematical expressions and equations
+    \item Tables with professional formatting
+    \item Code listings with syntax highlighting
+    \item Cross-referencing and labels
+    \item Hyperlinks
+    \item Theorems and proofs
+    \item Lists and enumerations
+\end{itemize}
+
+LaTeX provides a powerful and flexible system for creating professional documents across various fields, from mathematics and science to humanities and business.
+
+\end{document}
+

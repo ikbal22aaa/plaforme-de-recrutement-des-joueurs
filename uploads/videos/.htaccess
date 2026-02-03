@@ -1,0 +1,28 @@
+# Sécurité pour le dossier videos
+# Empêcher l'exécution de scripts
+<Files "*.php">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+# Permettre seulement les fichiers vidéo
+<FilesMatch "\.(mp4|avi|mov|wmv|flv|webm|mkv)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
+
+# Bloquer tout le reste
+<FilesMatch ".*">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+# Désactiver l'affichage du contenu du dossier
+Options -Indexes
+
+# Headers pour les vidéos
+<FilesMatch "\.(mp4|avi|mov|wmv|flv|webm|mkv)$">
+    Header set Content-Type "video/mp4"
+    Header set Cache-Control "public, max-age=31536000"
+</FilesMatch>
+
